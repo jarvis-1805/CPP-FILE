@@ -1,3 +1,7 @@
+/* Create a class RELATION, use Matrix notation to represent a relation. Include functions to 
+check if a relation is reflexive, Symmetric, Anti-symmetric and Transitive. Write a Program 
+to use this class.
+*/
 #include<iostream>
 using namespace std;
 class RELATION
