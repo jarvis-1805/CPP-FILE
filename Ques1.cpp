@@ -1,7 +1,15 @@
+/* Write a Program to create a SET A and determine the cardinality of SET for an input array of 
+elements (repetition allowed) and perform the following operations on the SET:    
+a) ismember (a, A): check whether an element belongs to set or not and return value as 
+true/false.  
+b) powerset(A): list all the elements of power set of A. 
+*/
 #include <iostream>
 #include <math.h>
 #include <iomanip>
+
 using namespace std;
+
 bool ismember(int size,int A[])
 {
     int a;
@@ -14,6 +22,7 @@ bool ismember(int size,int A[])
     }
     return false;
 }
+
 void print(char code[],int arr[], int n)
 {
 
@@ -33,9 +42,9 @@ void print(char code[],int arr[], int n)
     }
     cout << "}\n";
 }
+
 void genUnionSet(int arr[], int n)
 {
-
     int i,r,l;
     char binary[n];
     r=pow(2,n-1);
@@ -56,6 +65,7 @@ void genUnionSet(int arr[], int n)
             }
     }
 }
+
 int main()
 {
     bool x;
