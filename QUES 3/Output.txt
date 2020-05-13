@@ -1,0 +1,26 @@
+OUTPUT:
+
+
+Enter the size of SET A : 3
+Enter the elements : 1 2 3
+
+A = {1 2 3 }
+
+Enter the no of relations (R on A) : 3
+Enter the relations in pair :
+1 1
+2 2
+3 3
+
+R = {(1 1 )(2 2 )(3 3 )}
+-------------------------------------------------
+
+MATRIX NOTATION
+
+     1  2  3
+
+1  | 1  0  0  |
+2  | 0  1  0  |
+3  | 0  0  1  |
+
+Relation is REFLEXIVE!!!
