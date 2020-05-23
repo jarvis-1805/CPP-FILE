@@ -246,29 +246,3 @@ bool RELATION::transitive()
 	
 	return flag;
 }
-
-int main()
-{
-	int p = 0;
-
-	RELATION ob;
-	
-	p = ob.inputSet();
-
-	if(p == 1)
-		ob.empty();
-	
-	else
-	{
-		ob.printSet();
-		ob.inputRelation();
-		ob.printRelation();
-		ob.Matrix();
-		ob.reflexive();
-		ob.symmetric();
-		ob.antiSymmetric();
-		ob.transitive();
-	}
-	
-	return 0;
-}
