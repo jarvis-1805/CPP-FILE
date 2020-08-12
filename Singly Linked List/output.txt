@@ -1,0 +1,220 @@
+
+=========== SINGLY LINKED LIST ===========
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 1
+Enter the new node's data : 1
+
+Do you want to enter more nodes? y/n: y
+Enter the new node's data : 2
+
+Do you want to enter more nodes? y/n: y
+Enter the new node's data : 3
+
+Do you want to enter more nodes? y/n: n
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 2
+
+1 -> 2 -> 3
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 3
+Enter the new node's data : 0
+
+Successfully inserted the node at beginning
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 5
+Enter the new node's data : 5
+
+Successfully inserted the node at end
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 2
+
+0 -> 1 -> 2 -> 3 -> 5
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 4
+Enter the new node's location: 5
+Enter the new node's data : 4
+
+Successfully inserted the node at 5
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 2
+
+0 -> 1 -> 2 -> 3 -> 4 -> 5
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 6
+
+Successfully deleted the node at beginning
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 8
+
+Successfully deleted the node at end
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 2
+
+1 -> 2 -> 3 -> 4
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 7
+Enter the to be deleted node's location: 3
+
+Successfully deleted node at 3
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 2
+
+1 -> 2 -> 4
+
+Do you want to operate more? y/n: y
+
+1. CREATE
+2. TRAVERSE
+3. INSERT AT BEGINNING
+4. INSERT AT LOCATION
+5. INSERT AT END
+6. DELETE AT BEGINNING
+7. DELETE AT LOCATION
+8. DELETE AT END
+9. EXIT
+
+Enter the number of your choice: 9
+
+EXITING...
