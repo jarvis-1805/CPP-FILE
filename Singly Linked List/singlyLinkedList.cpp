@@ -93,6 +93,7 @@ void singlyLinkedList::choiceCalling(int ch)
 
 void singlyLinkedList::create()
 {
+	cout << "\n------------ CREATING NEW LIST ------------\n";
 	char ch;
 	do
 	{
@@ -117,6 +118,7 @@ void singlyLinkedList::create()
 
 void singlyLinkedList::traverse()
 {
+	cout << "\n------------ TRAVERSING LIST ------------\n";
 	emptyListChecker();
 	temp = head;
 	cout << endl;
@@ -132,6 +134,7 @@ void singlyLinkedList::traverse()
 
 void singlyLinkedList::insert_at_beginning()
 {
+	cout << "\n------------ INSERTING AT BEGINNING ------------\n";
 	emptyListChecker();
 	newNode = (struct node *)new struct node;
 	cout << "Enter the new node's data : ";
@@ -143,6 +146,7 @@ void singlyLinkedList::insert_at_beginning()
 
 void singlyLinkedList::insert_at_location()
 {
+	cout << "\n------------ INSERTING AT LOCATION ------------\n";
 	emptyListChecker();
 	int loc, i=1, count;
 	count = countList();
@@ -183,6 +187,7 @@ void singlyLinkedList::insert_at_location()
 
 void singlyLinkedList::insert_at_end()
 {
+	cout << "\n------------ INSERTING AT END ------------\n";
 	emptyListChecker();
 	newNode = (struct node *)new struct node;
 	cout << "Enter the new node's data : ";
@@ -199,6 +204,7 @@ void singlyLinkedList::insert_at_end()
 
 void singlyLinkedList::delete_at_beginning()
 {
+	cout << "\n------------ DELETING AT BEGINNING ------------\n";
 	emptyListChecker();
 	int c = countList();
 	if(c == 0)
@@ -214,6 +220,7 @@ void singlyLinkedList::delete_at_beginning()
 
 void singlyLinkedList::delete_at_location()
 {
+	cout << "\n------------ DELETING AT LOACTION ------------\n";
 	emptyListChecker();
 	struct node *temp1;
 	int loc, i=1, count;
@@ -224,10 +231,7 @@ void singlyLinkedList::delete_at_location()
 		cin >> loc;
 		if(loc == 1)
 		{
-			temp1 = temp = head;
-			head = temp -> next;
-			delete(temp1);
-			cout << "\nSuccessfully deleted node at " << loc << endl;
+			delete_at_beginning();
 			break;
 		}
 		if(loc > count || loc == 0)
@@ -246,6 +250,11 @@ void singlyLinkedList::delete_at_location()
 				temp1 = temp1 -> next;
 				++i;
 			}
+			if(temp -> next -> next == NULL)
+			{
+				delete_at_end();
+				break;
+			}
 			temp -> next = temp -> next -> next;
 			delete(temp1 -> next);
 			cout << "\nSuccessfully deleted node at " << loc << endl;
@@ -256,6 +265,7 @@ void singlyLinkedList::delete_at_location()
 
 void singlyLinkedList::delete_at_end()
 {
+	cout << "\n------------ DELETING AT END ------------\n";
 	emptyListChecker();
 	int c = countList();
 	temp = head;
@@ -279,7 +289,7 @@ void singlyLinkedList::delete_at_end()
 
 void singlyLinkedList::exitFunc()
 {
-	cout << "\nEXITING...\n";
+	cout << "\n########### EXITING... ###########\n";
 	exit(1);
 }
 
