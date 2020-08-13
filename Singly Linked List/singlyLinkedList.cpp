@@ -1,5 +1,4 @@
 #include<iostream>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -12,6 +11,9 @@ class singlyLinkedList
 			struct node *next;
 		};
 		struct node *head=NULL, *newNode, *temp;
+		int ch;
+		
+		~singlyLinkedList();
 		
 		void options();
 		void choice();
@@ -25,11 +27,17 @@ class singlyLinkedList
 		void delete_at_beginning();
 		void delete_at_location();
 		void delete_at_end();
-		void exitFunc();
+		void search_in_list();
+		void reverse_the_list();
 		
 		int countList();
 		void emptyListChecker();
 };
+
+singlyLinkedList::~singlyLinkedList()
+{
+	cout << "\n########### MEMORY IS FREED ###########\n";
+}
 
 void singlyLinkedList::options()
 {
@@ -41,14 +49,15 @@ void singlyLinkedList::options()
 		<<	"\n6. DELETE AT BEGINNING"
 		<<	"\n7. DELETE AT LOCATION"
 		<<	"\n8. DELETE AT END"
-		<<	"\n9. EXIT";
+		<<	"\n9. SEARCH IN LIST"
+		<<	"\n10. REVERSE THE LIST"
+		<<	"\n0. EXIT";
 	
 	choice();
 }
 
 void singlyLinkedList::choice()
 {
-	int ch;
 	cout << "\n\nEnter the number of your choice: ";
 	cin >> ch;
 	choiceCalling(ch);
@@ -62,6 +71,7 @@ void singlyLinkedList::choiceCalling(int ch)
 			create();
 			break;
 		case 2:
+			cout << "\n------------ TRAVERSING LIST ------------\n";
 			traverse();
 			break;
 		case 3:
@@ -83,7 +93,12 @@ void singlyLinkedList::choiceCalling(int ch)
 			delete_at_end();
 			break;
 		case 9:
-			exitFunc();
+			search_in_list();
+			break;
+		case 10:
+			reverse_the_list();
+			break;
+		case 0:
 			break;
 		default:
 			cout << "\n########### WRONG CHOICE... ###########\n";
@@ -118,10 +133,9 @@ void singlyLinkedList::create()
 
 void singlyLinkedList::traverse()
 {
-	cout << "\n------------ TRAVERSING LIST ------------\n";
 	emptyListChecker();
 	temp = head;
-	cout << endl;
+	cout << endl << "List: ";
 	while(temp != NULL)
 	{
 		cout << temp -> data;
@@ -142,6 +156,7 @@ void singlyLinkedList::insert_at_beginning()
 	newNode -> next = head;
 	head = newNode;
 	cout << "\nSuccessfully inserted the node at beginning\n";
+	traverse();
 }
 
 void singlyLinkedList::insert_at_location()
@@ -170,16 +185,15 @@ void singlyLinkedList::insert_at_location()
 			cout << "Enter the new node's data : ";
 			cin >> newNode -> data;
 			temp = head;
-			while(i < loc)
+			while(i < loc-1)
 			{
-				if(i == loc-1)
-					break;
 				temp = temp -> next;
 				++i;
 			}
 			newNode -> next = temp -> next;
 			temp -> next = newNode;
 			cout << "\nSuccessfully inserted the node at " << loc << endl;
+			traverse();
 			break;
 		}
 	}
@@ -200,6 +214,7 @@ void singlyLinkedList::insert_at_end()
 	}
 	temp -> next = newNode;
 	cout << "\nSuccessfully inserted the node at end\n";
+	traverse();
 }
 
 void singlyLinkedList::delete_at_beginning()
@@ -215,6 +230,7 @@ void singlyLinkedList::delete_at_beginning()
 		head = head -> next;
 		delete(temp);
 		cout << "\nSuccessfully deleted the node at beginning\n";
+		traverse();
 	}
 }
 
@@ -242,10 +258,9 @@ void singlyLinkedList::delete_at_location()
 		else
 		{
 			temp = head;
-			while(i < loc)
+			temp1 = head;
+			while(i < loc-1)
 			{
-				if(i == loc-1)
-					break;
 				temp = temp -> next;
 				temp1 = temp1 -> next;
 				++i;
@@ -258,6 +273,7 @@ void singlyLinkedList::delete_at_location()
 			temp -> next = temp -> next -> next;
 			delete(temp1 -> next);
 			cout << "\nSuccessfully deleted node at " << loc << endl;
+			traverse();
 			break;
 		}
 	}
@@ -285,12 +301,50 @@ void singlyLinkedList::delete_at_end()
 		temp -> next = NULL;
 		cout << "\nSuccessfully deleted the node at end\n";
 	}
+	traverse();
 }
 
-void singlyLinkedList::exitFunc()
+void singlyLinkedList::search_in_list()
 {
-	cout << "\n########### EXITING... ###########\n";
-	exit(1);
+	bool flag=false;
+	int ele, count=0;
+	cout << "\n------------ SEARCHING IN LIST ------------\n";
+	emptyListChecker();
+	cout << "Enter the element to be searched: ";
+	cin >> ele;
+	temp = head;
+	do
+	{
+		if(temp -> data == ele)
+		{
+			flag = true;
+			break;
+		}
+		temp = temp -> next;
+		count++;
+	}while(temp != NULL);
+	if(flag == true)
+		cout << endl << ele << " found at position " << count+1 << " in the list\n";
+	else
+		cout << endl << ele << " not found in the list\n";
+}
+
+void singlyLinkedList::reverse_the_list()
+{
+	cout << "\n------------ REVERSING THE LIST ------------\n";
+	emptyListChecker();
+	struct node *prevNode, *nextNode;
+	prevNode = NULL;
+	temp = nextNode = head;
+	while(nextNode != NULL)
+	{
+		nextNode = nextNode -> next;
+		temp -> next = prevNode;
+		prevNode = temp;
+		temp = nextNode;
+	}
+	head = prevNode;
+	traverse();
 }
 
 int singlyLinkedList::countList()
@@ -316,15 +370,15 @@ void singlyLinkedList::emptyListChecker()
 
 int main()
 {
-	char ch;
 	singlyLinkedList ob;
 	cout << "\n=========== SINGLY LINKED LIST ===========\n";
 	do
 	{
 		ob.options();
-		cout << "\nDo you want to operate more? y/n: ";
-		cin >> ch;
-	}while(ch == 'y');
+		if(ob.ch == 0)
+			break;
+	}while(1);
+	
 	cout << "\n########### EXITING... ###########\n";
 	return 0;
 }
