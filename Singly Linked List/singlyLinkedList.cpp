@@ -2,12 +2,13 @@
 
 using namespace std;
 
+template <typename T>
 class singlyLinkedList
 {
 	public:
 		struct node
 		{
-			int data;
+			T data;
 			struct node *next;
 		};
 		struct node *head=NULL, *newNode, *temp;
@@ -34,12 +35,22 @@ class singlyLinkedList
 		void emptyListChecker();
 };
 
-singlyLinkedList::~singlyLinkedList()
+template <typename T>
+singlyLinkedList<T>::~singlyLinkedList()
 {
+	struct node *temp1;
+	temp = temp1 = head;
+	while(temp != NULL)
+	{
+		temp1 = temp1 -> next;
+		delete(temp);
+		temp = temp1;
+	}
 	cout << "\n########### MEMORY IS FREED ###########\n";
 }
 
-void singlyLinkedList::options()
+template <typename T>
+void singlyLinkedList<T>::options()
 {
 	cout << "\n1. CREATE"
 		<<	"\n2. TRAVERSE"
@@ -56,14 +67,16 @@ void singlyLinkedList::options()
 	choice();
 }
 
-void singlyLinkedList::choice()
+template <typename T>
+void singlyLinkedList<T>::choice()
 {
 	cout << "\n\nEnter the number of your choice: ";
 	cin >> ch;
 	choiceCalling(ch);
 }
 
-void singlyLinkedList::choiceCalling(int ch)
+template <typename T>
+void singlyLinkedList<T>::choiceCalling(int ch)
 {
 	switch(ch)
 	{
@@ -106,7 +119,8 @@ void singlyLinkedList::choiceCalling(int ch)
 	}
 }
 
-void singlyLinkedList::create()
+template <typename T>
+void singlyLinkedList<T>::create()
 {
 	cout << "\n------------ CREATING NEW LIST ------------\n";
 	char ch;
@@ -131,7 +145,8 @@ void singlyLinkedList::create()
 	temp = head;
 }
 
-void singlyLinkedList::traverse()
+template <typename T>
+void singlyLinkedList<T>::traverse()
 {
 	emptyListChecker();
 	temp = head;
@@ -146,7 +161,8 @@ void singlyLinkedList::traverse()
 	cout << endl;
 }
 
-void singlyLinkedList::insert_at_beginning()
+template <typename T>
+void singlyLinkedList<T>::insert_at_beginning()
 {
 	cout << "\n------------ INSERTING AT BEGINNING ------------\n";
 	emptyListChecker();
@@ -159,7 +175,8 @@ void singlyLinkedList::insert_at_beginning()
 	traverse();
 }
 
-void singlyLinkedList::insert_at_location()
+template <typename T>
+void singlyLinkedList<T>::insert_at_location()
 {
 	cout << "\n------------ INSERTING AT LOCATION ------------\n";
 	emptyListChecker();
@@ -199,7 +216,8 @@ void singlyLinkedList::insert_at_location()
 	}
 }
 
-void singlyLinkedList::insert_at_end()
+template <typename T>
+void singlyLinkedList<T>::insert_at_end()
 {
 	cout << "\n------------ INSERTING AT END ------------\n";
 	emptyListChecker();
@@ -217,7 +235,8 @@ void singlyLinkedList::insert_at_end()
 	traverse();
 }
 
-void singlyLinkedList::delete_at_beginning()
+template <typename T>
+void singlyLinkedList<T>::delete_at_beginning()
 {
 	cout << "\n------------ DELETING AT BEGINNING ------------\n";
 	emptyListChecker();
@@ -234,7 +253,8 @@ void singlyLinkedList::delete_at_beginning()
 	}
 }
 
-void singlyLinkedList::delete_at_location()
+template <typename T>
+void singlyLinkedList<T>::delete_at_location()
 {
 	cout << "\n------------ DELETING AT LOACTION ------------\n";
 	emptyListChecker();
@@ -279,7 +299,8 @@ void singlyLinkedList::delete_at_location()
 	}
 }
 
-void singlyLinkedList::delete_at_end()
+template <typename T>
+void singlyLinkedList<T>::delete_at_end()
 {
 	cout << "\n------------ DELETING AT END ------------\n";
 	emptyListChecker();
@@ -304,7 +325,8 @@ void singlyLinkedList::delete_at_end()
 	traverse();
 }
 
-void singlyLinkedList::search_in_list()
+template <typename T>
+void singlyLinkedList<T>::search_in_list()
 {
 	bool flag=false;
 	int ele, count=0;
@@ -329,7 +351,8 @@ void singlyLinkedList::search_in_list()
 		cout << endl << ele << " not found in the list\n";
 }
 
-void singlyLinkedList::reverse_the_list()
+template <typename T>
+void singlyLinkedList<T>::reverse_the_list()
 {
 	cout << "\n------------ REVERSING THE LIST ------------\n";
 	emptyListChecker();
@@ -347,7 +370,8 @@ void singlyLinkedList::reverse_the_list()
 	traverse();
 }
 
-int singlyLinkedList::countList()
+template <typename T>
+int singlyLinkedList<T>::countList()
 {
 	int count=0;
 	temp = head;
@@ -359,7 +383,8 @@ int singlyLinkedList::countList()
 	return count;
 }
 
-void singlyLinkedList::emptyListChecker()
+template <typename T>
+void singlyLinkedList<T>::emptyListChecker()
 {
 	if(head == NULL)
 	{
@@ -370,7 +395,7 @@ void singlyLinkedList::emptyListChecker()
 
 int main()
 {
-	singlyLinkedList ob;
+	singlyLinkedList<char> ob;
 	cout << "\n=========== SINGLY LINKED LIST ===========\n";
 	do
 	{
