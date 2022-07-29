@@ -28,3 +28,8 @@ File of Discrete Structure of I year II semester.
    [Ques 20](QUES&#32;20)       | Given a full m-ary tree with iinternal vertices, Write a Program to find the number of leaf nodes.
 
 It also contain some of the random practice questions.
+
+## Author
+
+[Shubhang Gupta](https://jarvis-1805.github.io)\
+[@shubhsahu1805](mailto:shubhsahu1805@gmail.com)
